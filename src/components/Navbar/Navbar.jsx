@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div>
       <Title>New Title</Title>
-      <Paragraph color='#DDD'>New Paragraph</Paragraph>
+      <Paragraph size='XG'>New Paragraph</Paragraph>
     </div>
   );
 };

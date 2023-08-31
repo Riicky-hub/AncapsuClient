@@ -49,29 +49,29 @@ export const Container = styled.div`
   }
 `;
 // TEXTS STYLES
-const textsSizes = ({ size }) => {
+const textsSizes = (size) => {
   switch (size) {
     case 'PPP':
-      return `font-size: ${sizePPP};`;
+      return `${sizePPP};`;
     case 'PP':
-      return `font-size: ${sizePP};`;
+      return `${sizePP};`;
     case 'P':
-      return `font-size: ${sizeP};`;
+      return `${sizeP};`;
     case 'M':
-      return `font-size: ${sizeM};`;
+      return `${sizeM};`;
     case 'G':
-      return `font-size: ${sizeG};`;
+      return `${sizeG};`;
     case 'XG':
-      return `font-size: ${sizeXG};`;
+      return `${sizeXG};`;
     default:
-      return `font-size: ${sizeP};`;
+      return `${sizeP};`;
   }
 };
 
 export const Title = styled.h2`
   color: ${({ color }) => (color ? color : Black)};
   font-weight: ${({ bold }) => (bold ? bold : 700)};
-  font-size: ${textsSizes};
+  font-size: ${({ size }) => textsSizes(size)};
   font-family: ${({ font }) => (font ? font : 'Playfair Display')};
   letter-spacing: 1.4px;
   font-style: normal;
@@ -81,7 +81,7 @@ export const Title = styled.h2`
 export const Paragraph = styled.p`
   color: ${({ color }) => (color ? color : Black)};
   font-weight: ${({ bold }) => (bold ? bold : 400)};
-  font-size: ${textsSizes};
+  font-size: ${({ size }) => textsSizes(size)};
   font-family: ${({ font }) => (font ? font : 'Pt Sans')};
   font-style: normal;
   line-height: normal;
