@@ -1,14 +1,13 @@
 import React from 'react';
 import { Navbar } from './components';
-import GlobalStyles from './globalStyles';
+import GlobalStyles, { Container } from './globalStyles';
 
 function App() {
   return (
-    <div>
+    <Container>
       <GlobalStyles />
-      <h1>Hello world</h1>
       <Navbar />
-    </div>
+    </Container>
   );
 }
 

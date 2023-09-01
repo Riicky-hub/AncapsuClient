@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { sizePPP, sizePP, sizeP, sizeM, sizeG, sizeXG } from './constants/textSize';
-import { Black } from './constants/colors';
+import { Black, White, Orange } from './constants/colors';
 import ptSansRegular from './fonts/PtSans/PTSans-Regular.ttf';
 import playfairDisplayRegular from './fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf';
 const GlobalStyles = createGlobalStyle`
@@ -23,6 +23,9 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-family: 'Pt Sans';
+  }
+  body {
+    background-color: ${White};
   }
   input,
   textarea,
@@ -49,7 +52,7 @@ export const Container = styled.div`
   }
 `;
 // TEXTS STYLES
-const textsSizes = (size) => {
+const handleFontSize = (size) => {
   switch (size) {
     case 'PPP':
       return `${sizePPP};`;
@@ -71,7 +74,7 @@ const textsSizes = (size) => {
 export const Title = styled.h2`
   color: ${({ color }) => (color ? color : Black)};
   font-weight: ${({ bold }) => (bold ? bold : 700)};
-  font-size: ${({ size }) => textsSizes(size)};
+  font-size: ${({ size }) => handleFontSize(size)};
   font-family: ${({ font }) => (font ? font : 'Playfair Display')};
   letter-spacing: 1.4px;
   font-style: normal;
@@ -81,10 +84,20 @@ export const Title = styled.h2`
 export const Paragraph = styled.p`
   color: ${({ color }) => (color ? color : Black)};
   font-weight: ${({ bold }) => (bold ? bold : 400)};
-  font-size: ${({ size }) => textsSizes(size)};
+  font-size: ${({ size }) => handleFontSize(size)};
   font-family: ${({ font }) => (font ? font : 'Pt Sans')};
   font-style: normal;
   line-height: normal;
+`;
+
+export const ButtonBorder = styled.button`
+  width: ${({ width }) => (width ? width : '100px')};
+  height: ${({ height }) => (height ? height : '37px')};
+  border: none;
+  border-radius: 20px;
+  background: ${({ bg }) => (bg ? bg : Orange)};
+  color: ${({ color }) => (color ? color : White)};
+  cursor: pointer;
 `;
 
 export default GlobalStyles;
