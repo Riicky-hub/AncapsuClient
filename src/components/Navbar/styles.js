@@ -8,7 +8,7 @@ const ColumnDiv = styled.div`
 `;
 
 export const NavbarContainer = styled.div`
-  padding: 20px 0;
+  padding-top: 20px;
   border-bottom: 3px solid ${Black};
 `;
 
@@ -31,4 +31,17 @@ export const DateDiv = styled(ColumnDiv)`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+`;
+
+export const CategoriesDiv = styled(ColumnDiv)`
+  justify-content: space-around;
+  padding: 10px 0 20px 0;
+`;
+
+export const Category = styled.a`
+  padding: 0 8px 18px 8px;
+  margin: 0 4px;
+  text-decoration: none;
+  font-weight: 700;
+  color: black;
 `;

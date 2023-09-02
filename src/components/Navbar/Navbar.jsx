@@ -6,8 +6,9 @@ import { Paragraph, ButtonBorder } from '../../globalStyles';
 import { BiSearch } from 'react-icons/bi';
 import { BsGlobe } from 'react-icons/bs';
 import { IconContext } from 'react-icons';
-import { NavbarContainer, RowDiv, ButtonDiv, DateDiv } from './styles';
+import { NavbarContainer, RowDiv, ButtonDiv, DateDiv, CategoriesDiv, Category } from './styles';
 import { Orange, Black } from '../../constants/colors';
+import { addSelected } from '../../assets/js/Navbar/categorySelection';
 
 const Navbar = () => {
   const [categories, setCategories] = useState();
@@ -69,15 +70,17 @@ const Navbar = () => {
             </ButtonDiv>
           </RowDiv>
         </RowDiv>
-        <RowDiv>
-          {filteredNavbarCategories.map((category) => {
-            return (
-              <a href='' key={category.id}>
-                {category.name}
-              </a>
-            );
-          })}
-        </RowDiv>
+        <CategoriesDiv>
+          <div>
+            {filteredNavbarCategories.map((category) => {
+              return (
+                <Category href='#' key={category.id} id='Category' onClick={(e) => addSelected(e, 'Category', Orange)}>
+                  {category.name}
+                </Category>
+              );
+            })}
+          </div>
+        </CategoriesDiv>
       </NavbarContainer>
     );
   }
