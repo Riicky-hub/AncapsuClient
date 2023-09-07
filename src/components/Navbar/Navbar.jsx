@@ -15,7 +15,7 @@ const Navbar = () => {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(true);
   let filteredNavbarCategories = [];
-  const SelectedCategories = [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13]; // Select 12 Categories
+  const SelectedCategories = [1, 2, 3, 4, 5, 6, 7]; // Select 12 Categories
   useEffect(() => {
     (async function runEffect() {
       try {

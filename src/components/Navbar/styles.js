@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Black } from '../../constants/colors';
+import { Black, Orange } from '../../constants/colors';
 
 const ColumnDiv = styled.div`
   width: 100%;
@@ -44,4 +44,9 @@ export const Category = styled.a`
   text-decoration: none;
   font-weight: 700;
   color: black;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s all ease-in-out;
+  &:hover {
+    border-bottom: 3px solid ${Orange};
+  }
 `;

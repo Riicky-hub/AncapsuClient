@@ -1,13 +1,17 @@
 import React from 'react';
-import { Navbar } from './components';
-import GlobalStyles, { Container } from './globalStyles';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import GlobalStyles from './globalStyles';
+import { Home, Create } from './pages';
 
 function App() {
   return (
-    <Container>
+    <BrowserRouter>
       <GlobalStyles />
-      <Navbar />
-    </Container>
+      <Routes>
+        <Route path='/' exact element={<Home />} />
+        <Route path='/create' exact element={<Create />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
